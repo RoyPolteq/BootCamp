@@ -14,15 +14,16 @@ import java.util.List;
 public class FirstSeleniumTest {
 
     WebDriver driver;
-
+    BrowserActions BrowserActionsOne;
     String username = "roy91191@hotmail.com";
     String password = "Test01";
 
     @BeforeMethod
     public void createBrowser () {
 
+        BrowserActionsOne = new BrowserActions();
         driver = new ChromeDriver();
-        BrowserActions.openWebsiteChrome(driver, "https://greatshop.polteq-testing.com" );
+        BrowserActionsOne.openWebsiteChrome(driver, "https://greatshop.polteq-testing.com" );
     }
 
     @Test
@@ -48,6 +49,6 @@ public class FirstSeleniumTest {
     @AfterMethod
     public void cleanUp () {
 
-        BrowserActions.cleanupBrowser(driver);
+        BrowserActionsOne.cleanupBrowser();
     }
 }

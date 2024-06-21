@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -18,12 +20,16 @@ public class SignOutTest {
     WebDriver driver;
     String username = "roy91191@hotmail.com";
     String password = "Test01";
+    BrowserActions BrowserActionsOne;
+    WebDriverWait wait;
 
     @BeforeMethod
     public void createBrowser () {
 
+        BrowserActionsOne = new BrowserActions();
         driver = new ChromeDriver();
-        BrowserActions.openWebsiteChrome(driver, "https://greatshop.polteq-testing.com" );
+        BrowserActionsOne.openWebsiteChrome(driver, "https://greatshop.polteq-testing.com" );
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     @Test
@@ -36,13 +42,15 @@ public class SignOutTest {
         Assert.assertTrue(driver.findElements(By.className("logout")).size()>0,"The logout button doesn't exist");
 
         driver.findElement(By.className("logout")).click();
-        Assert.assertTrue(driver.findElements(By.className("login")).size()>0,"The login button doesn't exist");
+
+        WebElement logOutButton = wait.until(ExpectedConditions.elementToBeClickable(By.className("login")));
+        Assert.assertTrue(logOutButton.isDisplayed(), "Login button is not there");
     }
 
     @AfterMethod
     public void cleanUp () {
 
-        BrowserActions.cleanupBrowser(driver);
+        BrowserActionsOne.cleanupBrowser();
     }
 
 }
