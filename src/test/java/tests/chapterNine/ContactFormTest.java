@@ -2,8 +2,6 @@ package tests.chapterNine;
 
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
-import pages.PolteqTestingGreatshop.ContactPage;
-import pages.PolteqTestingGreatshop.Header;
 import tests.TestShopScenario;
 
 public class ContactFormTest extends TestShopScenario {
