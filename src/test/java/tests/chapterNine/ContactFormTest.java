@@ -24,8 +24,8 @@ public class ContactFormTest {
     @BeforeMethod
     public void createBrowser () {
 
-        BrowserActionsOne = new BrowserActions();
         driver = new ChromeDriver();
+        BrowserActionsOne = new BrowserActions();
         BrowserActionsOne.openWebsiteChrome(driver, "https://greatshop.polteq-testing.com" );
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
