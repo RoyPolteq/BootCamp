@@ -13,6 +13,7 @@ import pages.PolteqTestingGreatshop.Header;
 import java.time.Duration;
 
 import static lib.Browser.CHROME;
+import static lib.Browser.FIREFOX;
 
 public class TestShopScenario {
 
