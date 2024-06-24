@@ -32,7 +32,7 @@ public class ContactPage {
     @FindBy(xpath = "//*[@id='submitMessage']")
     WebElement submitButton;
 
-    @FindBy(xpath = "//*[contains(@class, 'alert-success')]")
+    @FindBy(xpath = "//*[contains(@class, 'alert-success')]") //als een webelement meerdere classes heeft, moet je met xpath contains gebruiken
     List<WebElement> successMessageXpath;
 
     @FindBy(className = "alert-success")
@@ -85,7 +85,7 @@ public class ContactPage {
 
     public boolean returnNumberOfSuccessMessagesNoList() {
 
-        wait.until(ExpectedConditions.visibilityOf(successMessageXpath.getFirst()));
+        wait.until(ExpectedConditions.visibilityOf(successMessage));
         return successMessage.isDisplayed();
     }
 }
