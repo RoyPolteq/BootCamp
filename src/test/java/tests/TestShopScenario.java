@@ -1,6 +1,7 @@
 package tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import lib.DriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -10,6 +11,8 @@ import pages.PolteqTestingGreatshop.ContactPage;
 import pages.PolteqTestingGreatshop.Header;
 
 import java.time.Duration;
+
+import static lib.Browser.CHROME;
 
 public class TestShopScenario {
 
@@ -21,8 +24,7 @@ public class TestShopScenario {
     @BeforeMethod
     public void setup(){
 
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        driver = DriverFactory.createDriver(CHROME);
         driver.get("https://greatshop.polteq-testing.com");
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));

@@ -1,22 +1,17 @@
 package pages.PolteqTestingGreatshop;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class Header {
-
-    WebDriver driver;
+public class Header extends BasePage {
 
     @FindBy(xpath = "//*[@title='Contact us']")
     WebElement loginButton;
 
     public Header (WebDriver driver) {
 
-        this.driver = driver;
-        PageFactory.initElements(this.driver, this);
+        super(driver); //roept de code in de constructor aan van de class waarvan je extend
     }
 
         public void clickOnContactUs () {
