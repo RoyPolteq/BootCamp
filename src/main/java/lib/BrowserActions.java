@@ -22,6 +22,11 @@ public class BrowserActions {
         driver.manage().window().maximize();
     }
 
+    public WebDriver returnDriver () {
+
+        return driver;
+    }
+
     public void cleanupBrowser() {
 
         driver.manage().deleteAllCookies();

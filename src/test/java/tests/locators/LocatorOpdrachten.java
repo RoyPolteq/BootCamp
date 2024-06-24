@@ -1,4 +1,4 @@
-package locators;
+package tests.locators;
 
 import lib.BrowserActions;
 import org.openqa.selenium.By;
