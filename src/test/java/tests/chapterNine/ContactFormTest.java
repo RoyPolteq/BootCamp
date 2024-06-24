@@ -11,9 +11,6 @@ public class ContactFormTest extends TestShopScenario {
     @Test
     public void successfulSubmit() {
 
-        Header headerOne = new Header(driver);
-        ContactPage contactPageOne = new ContactPage(driver);
-
         headerOne.clickOnContactUs();
         contactPageOne.selectSubject("Customer Service");
         contactPageOne.fillInEmail("bootcamper@feelthepain.com");
