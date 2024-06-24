@@ -1,10 +1,13 @@
 package lib;
 
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
-
+import java.util.List;
 
 
 public class BrowserActions {
@@ -25,4 +28,22 @@ public class BrowserActions {
         driver.quit();
     }
 
+    public void acceptAlert () {
+
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
+    }
+
+    public void clearWishList(){
+
+        List<WebElement> removeButtons = driver.findElements(By.className("icon-remove"));
+
+        for (WebElement removeButton : removeButtons ) {
+
+            removeButton.click();
+            acceptAlert();
+        }
+
+
+    }
 }
