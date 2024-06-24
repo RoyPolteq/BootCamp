@@ -36,7 +36,7 @@ public class ContactPage {
     List<WebElement> successMessageXpath;
 
     @FindBy(className = "alert-success")
-    List<WebElement> successMessage;
+    WebElement successMessage;
 
     public ContactPage(WebDriver driver) {
 
@@ -81,5 +81,11 @@ public class ContactPage {
 
         wait.until(ExpectedConditions.visibilityOf(successMessageXpath.getFirst()));
         return successMessageXpath.size()== 1;
+    }
+
+    public boolean returnNumberOfSuccessMessagesNoList() {
+
+        wait.until(ExpectedConditions.visibilityOf(successMessageXpath.getFirst()));
+        return successMessage.isDisplayed();
     }
 }
