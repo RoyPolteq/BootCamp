@@ -1,4 +1,4 @@
-package chapterSix;
+package tests.chapterSix;
 
 import lib.BrowserActions;
 import org.assertj.core.api.Assertions;

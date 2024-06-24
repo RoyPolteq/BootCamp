@@ -1,4 +1,4 @@
-package homework;
+package tests.homework;
 
 import lib.BrowserActions;
 import org.assertj.core.api.Assertions;
