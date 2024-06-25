@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE suite SYSTEM "https://test.ng.org/testng-1.0.dtd">
+
+<suite name="Suite" parallel="none">
+    <test name="DataVar1Test">
+        <parameter name="subject" value="Customer Service" />
+        <parameter name="email" value="bootcamp@feelthepain.com" />
+        <parameter name="orderID" value="4321234" />
+        <parameter name="message" value="Bla bla bla dit is onzin" />
+        <parameter name="browser" value="CHROME"></parameter>
+        <classes>
+            <class name="parametersExperiment.DataDrivenTest"></class>
+        </classes>
+    </test>
+
+    <test name="DataVar2Test">
+        <parameter name="subject" value="Customer Service" />
+        <parameter name="email" value="roy@test.com" />
+        <parameter name="orderID" value="666666" />
+        <parameter name="message" value="Dit is de 2e test" />
+        <parameter name="browser" value="FIREFOX"></parameter>
+        <classes>
+            <class name="parametersExperiment.DataDrivenTest"></class>
+        </classes>
+    </test>
+
+</suite>
