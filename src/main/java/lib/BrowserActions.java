@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 import java.util.List;
 
+//dit zit ook allemaal in de TestShopScenario class die je kunt extenden, dat is meestal beter dan deze aanroepen
 
 public class BrowserActions {
 

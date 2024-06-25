@@ -1,0 +1,6 @@
+Feature: Login Tests
+
+  Scenario: A valid customer should be able to login
+    Given I am on the Polteq great testshop
+    When I log in as a valid user
+    Then  I should be logged in
