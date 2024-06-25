@@ -1,14 +1,13 @@
 package tests.com.polteqTestingGreatshop;
 
+import lib.Browser;
 import lib.BrowserActions;
+import lib.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
-
-import java.time.Duration;
 import java.util.List;
 
 public class FirstSeleniumTest {
@@ -22,7 +21,7 @@ public class FirstSeleniumTest {
     public void createBrowser () {
 
         BrowserActionsOne = new BrowserActions();
-        driver = new ChromeDriver();
+        driver = DriverFactory.createDriver(Browser.CHROME);
         BrowserActionsOne.openWebsiteChrome(driver, "https://greatshop.polteq-testing.com" );
     }
 

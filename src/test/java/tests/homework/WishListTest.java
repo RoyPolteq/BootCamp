@@ -1,6 +1,8 @@
 package tests.homework;
 
+import lib.Browser;
 import lib.BrowserActions;
+import lib.DriverFactory;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -31,7 +33,7 @@ public class WishListTest {
     public void createBrowser () {
 
         BrowserActionsOne = new BrowserActions();
-        driver = new ChromeDriver();
+        driver = DriverFactory.createDriver(Browser.CHROME);
         BrowserActionsOne.openWebsiteChrome(driver, "https://greatshop.polteq-testing.com" );
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }

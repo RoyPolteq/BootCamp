@@ -1,19 +1,16 @@
 package tests;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import lib.DriverFactory;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import pages.PolteqTestingGreatshop.ContactPage;
-import pages.PolteqTestingGreatshop.Header;
+import pages.polteqGreatWorkshop.ContactPage;
+import pages.polteqGreatWorkshop.Header;
 
 import java.time.Duration;
 
 import static lib.Browser.CHROME;
-import static lib.Browser.FIREFOX;
 
 public class TestShopScenario {
 
