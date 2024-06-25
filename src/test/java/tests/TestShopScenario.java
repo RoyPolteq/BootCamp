@@ -5,8 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import pages.ContactPage;
-import pages.Header;
+import pages.polteqGreatWorkshop.ContactPage;
+import pages.polteqGreatWorkshop.Header;
 
 import java.time.Duration;
 

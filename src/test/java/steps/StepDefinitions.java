@@ -11,10 +11,9 @@ import lib.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import pages.polteqGreatWorkshop.Header;
+import pages.polteqGreatWorkshop.LogInPage;
 
 import java.util.List;
 
@@ -22,6 +21,8 @@ public class StepDefinitions {
 
     WebDriver driver;
     BrowserActions BrowserActionsOne;
+    Header headerOne;
+    LogInPage logInPageOne;
     private String username = "roy91191@hotmail.com";
     private String password = "Test01";
 
@@ -30,6 +31,8 @@ public class StepDefinitions {
 
         BrowserActionsOne = new BrowserActions();
         driver = DriverFactory.createDriver(Browser.CHROME);
+        headerOne = new Header(driver);
+        logInPageOne = new LogInPage(driver);
     }
 
     @Given("I am on the Polteq great testshop")
@@ -41,10 +44,19 @@ public class StepDefinitions {
     @When("I log in as a valid user")
     public void iLogInAsAValidUser() {
 
-        driver.findElement(By.className("login")).click();
-        driver.findElement(By.id("email")).sendKeys(username);
-        driver.findElement(By.id("passwd")).sendKeys(password);
-        driver.findElement(By.id("SubmitLogin")).click();
+        headerOne.clickOnSignIn();
+        logInPageOne.fillInEmail(username);
+        logInPageOne.fillInPassword(password);
+        logInPageOne.clickOnSubmit();
+    }
+
+    @When("I log in as {string} with password {string}")
+    public void iLogInAsAVariableUser(String email, String pswd) {
+
+        headerOne.clickOnSignIn();
+        logInPageOne.fillInEmail(email);
+        logInPageOne.fillInPassword(pswd);
+        logInPageOne.clickOnSubmit();
     }
 
     @Then("I should be logged in")

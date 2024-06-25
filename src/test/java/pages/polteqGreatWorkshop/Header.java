@@ -1,13 +1,17 @@
-package pages;
+package pages.polteqGreatWorkshop;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pages.BasePage;
 
 public class Header extends BasePage {
 
     @FindBy(xpath = "//*[@title='Contact us']")
-    WebElement loginButton;
+    WebElement contactUsButton;
+
+    @FindBy(xpath = "//*[@class='login']")
+    WebElement signInButton;
 
     public Header (WebDriver driver) {
 
@@ -16,6 +20,11 @@ public class Header extends BasePage {
 
         public void clickOnContactUs () {
 
-            loginButton.click();
+            contactUsButton.click();
+        }
+
+        public void clickOnSignIn() {
+
+            signInButton.click();
         }
 }
