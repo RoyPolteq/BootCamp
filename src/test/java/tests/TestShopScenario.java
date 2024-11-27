@@ -7,6 +7,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pages.polteqGreatWorkshop.ContactPage;
 import pages.polteqGreatWorkshop.Header;
+import pages.polteqGreatWorkshop.LogInPage;
 
 import java.time.Duration;
 
@@ -18,6 +19,7 @@ public class TestShopScenario {
     protected WebDriverWait wait;
     protected Header headerOne;
     protected ContactPage contactPageOne;
+    protected LogInPage logInPageOne;
 
     @BeforeMethod
     public void setup(){
@@ -29,6 +31,7 @@ public class TestShopScenario {
 
         headerOne = new Header(driver);
         contactPageOne = new ContactPage(driver);
+        logInPageOne = new LogInPage(driver);
     }
 
     @AfterMethod
