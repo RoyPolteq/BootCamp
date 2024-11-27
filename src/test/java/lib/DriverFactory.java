@@ -25,7 +25,6 @@ public class DriverFactory {
             case SAFARI:
                 return createSafariDriver();
         }
-
     }
 
     private static WebDriver createChromeDriver() {

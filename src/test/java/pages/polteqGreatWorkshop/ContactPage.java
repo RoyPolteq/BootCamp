@@ -29,7 +29,7 @@ public class ContactPage extends BasePage {
     @FindBy(xpath = "//*[contains(@class, 'alert-success')]") //als een webelement meerdere classes heeft, moet je met xpath contains gebruiken
     List<WebElement> successMessageXpath;
 
-    @FindBy(className = "alert-success")
+    @FindBy(className = "alert-success") //deze heeft maar 1 class
     WebElement successMessage;
 
     public ContactPage(WebDriver driver) {
